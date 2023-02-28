@@ -17,6 +17,14 @@ ThemeData _baseTheme(Brightness brightness) {
     appBarTheme: const AppBarTheme(
       color: Colors.blue,
     ),
+    textTheme: theme.textTheme.copyWith(
+      bodyLarge: const TextStyle(
+        color: Colors.white,
+      ),
+      bodyMedium: const TextStyle(
+        color: Colors.white,
+      ),
+    ),
   );
 }
 

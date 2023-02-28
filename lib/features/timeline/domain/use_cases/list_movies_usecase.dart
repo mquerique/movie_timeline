@@ -7,6 +7,10 @@ class ListMoviesUsecase {
   const ListMoviesUsecase(this.repository);
 
   Future<List<Movie>> call() async {
-    return repository.listMovies();
+    final movies = await repository.listMovies();
+    return movies
+      ..sort(
+        (a, b) => a.releaseDate.compareTo(b.releaseDate),
+      );
   }
 }

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:movie_timeline/core/themes/bloc/theme_bloc.dart';
+import 'package:movie_timeline/features/timeline/presentation/blocs/movie_bloc.dart';
+import 'package:movie_timeline/features/timeline/presentation/screens/timeline_screen.dart';
 import 'package:movie_timeline/injection_container.dart' as ic;
 
 void main() async {
@@ -18,33 +20,22 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => ic.getIt<ThemeBloc>()),
+        BlocProvider(create: (_) => ic.getIt<MovieBloc>()),
       ],
       child: BlocBuilder<ThemeBloc, ThemeState>(
-        builder: (context, state) {
-          return MaterialApp(
-            title: 'Flutter Demo',
-            localizationsDelegates: AppLocalizations.localizationsDelegates,
-            supportedLocales: AppLocalizations.supportedLocales,
-            theme: state.themeData,
-            home: const MyHomePage(),
-          );
-        },
+        builder: _buildApp,
       ),
     );
   }
-}
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text(
-          AppLocalizations.of(context)!.helloParam('world'),
-        ),
-      ),
+  Widget _buildApp(BuildContext context, ThemeState state) {
+    return MaterialApp(
+      title: 'Movie Timeline',
+      debugShowCheckedModeBanner: false,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      theme: state.themeData,
+      home: const TimelineScreen(),
     );
   }
 }

@@ -1,11 +1,5 @@
 {
-  "hello": "Hello World!",
-  "helloParam": "Hello {param}",
-  "@helloParam": {
-    "placeholders": {
-      "param": {
-        "type": "String"
-      }
-    }
-  }
+  "timeline": "Timeline",
+  "marvelCinematicUniverse": "Marvel cinematic universe",
+  "errSomethingWentWrong": "Oops, something went wrong"
 }

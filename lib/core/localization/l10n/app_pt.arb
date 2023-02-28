@@ -1,4 +1,5 @@
 {
-  "hello": "Olá Mundo!",
-  "helloParam": "Olá {param}"
+  "timeline": "Linha do tempo",
+  "marvelCinematicUniverse": "Marvel cinematic universe",
+  "errSomethingWentWrong": "Oops, parece que algo deu errado."
 }
