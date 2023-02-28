@@ -1,0 +1,11 @@
+{
+  "hello": "Hello World!",
+  "helloParam": "Hello {param}",
+  "@helloParam": {
+    "placeholders": {
+      "param": {
+        "type": "String"
+      }
+    }
+  }
+}

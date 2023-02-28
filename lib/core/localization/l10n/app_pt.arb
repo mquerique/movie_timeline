@@ -1,0 +1,4 @@
+{
+  "hello": "Olá Mundo!",
+  "helloParam": "Olá {param}"
+}
