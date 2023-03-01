@@ -18,6 +18,9 @@ ThemeData _baseTheme(Brightness brightness) {
       color: Colors.blue,
     ),
     textTheme: theme.textTheme.copyWith(
+      titleLarge: const TextStyle(
+        color: Colors.white,
+      ),
       bodyLarge: const TextStyle(
         color: Colors.white,
       ),

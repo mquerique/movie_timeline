@@ -1,5 +1,13 @@
 {
   "timeline": "Timeline",
   "marvelCinematicUniverse": "Marvel cinematic universe",
-  "errSomethingWentWrong": "Oops, something went wrong"
+  "errSomethingWentWrong": "Oops, something went wrong",
+  "rating": "Rating: {rating}/10",
+  "@rating": {
+    "placeholders": {
+      "rating": {
+        "type": "String"
+      }
+    }
+  }
 }

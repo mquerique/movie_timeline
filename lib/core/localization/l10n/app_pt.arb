@@ -1,5 +1,6 @@
 {
   "timeline": "Linha do tempo",
   "marvelCinematicUniverse": "Marvel cinematic universe",
-  "errSomethingWentWrong": "Oops, parece que algo deu errado."
+  "errSomethingWentWrong": "Oops, parece que algo deu errado.",
+  "rating": "Avaliação: {rating}/10"
 }
