@@ -64,24 +64,29 @@ class _MovieDetailsScreenState extends State<MovieDetailsScreen> {
   }
 
   Widget _buildTitle() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            Text(
-              '${widget.movie.title} ',
-              style: Theme.of(context).textTheme.titleLarge,
+    return SizedBox(
+      width: double.infinity,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Wrap(
+            crossAxisAlignment: WrapCrossAlignment.end,
+            children: [
+              Text(
+                '${widget.movie.title} ',
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+              Text('(${widget.movie.releaseDate.year})'),
+            ],
+          ),
+          const SizedBox(height: kSpacingRegular),
+          Text(
+            AppLocalizations.of(context)!.rating(
+              '${widget.movie.voteAverage.round()}',
             ),
-            Text('(${widget.movie.releaseDate.year})'),
-          ],
-        ),
-        const SizedBox(height: kSpacingRegular),
-        Text(
-          AppLocalizations.of(context)!
-              .rating('${widget.movie.voteAverage.round()}'),
-        ),
-      ],
+          ),
+        ],
+      ),
     );
   }
 

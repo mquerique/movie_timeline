@@ -9,13 +9,10 @@ ThemeData _baseTheme(Brightness brightness) {
   final theme = ThemeData(brightness: brightness);
   return theme.copyWith(
     colorScheme: theme.colorScheme.copyWith(
-      primary: Colors.blue,
-      secondary: Colors.blue,
+      primary: const Color(0xFFed1d24),
+      secondary: const Color(0xFFed1d24),
       onSecondary: Colors.white,
       onPrimary: Colors.white,
-    ),
-    appBarTheme: const AppBarTheme(
-      color: Colors.blue,
     ),
     textTheme: theme.textTheme.copyWith(
       titleLarge: const TextStyle(
