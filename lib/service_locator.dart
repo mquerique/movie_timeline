@@ -10,8 +10,8 @@ final getIt = GetIt.instance;
 
 Future<void> setup() async {
   // Blocs
-  getIt.registerFactory(() => ThemeBloc());
-  getIt.registerFactory(() => MovieBloc(listMovies: getIt()));
+  getIt.registerLazySingleton(() => ThemeBloc());
+  getIt.registerLazySingleton(() => MovieBloc(listMovies: getIt()));
 
   // Use cases
   getIt.registerLazySingleton(() => ListMoviesUsecase(getIt()));

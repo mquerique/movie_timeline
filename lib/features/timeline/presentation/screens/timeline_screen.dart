@@ -14,12 +14,6 @@ class TimelineScreen extends StatefulWidget {
 
 class _TimelineScreenState extends State<TimelineScreen> {
   @override
-  void initState() {
-    BlocProvider.of<MovieBloc>(context).add(const ListMoviesEvent());
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,

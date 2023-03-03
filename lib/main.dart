@@ -5,11 +5,11 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:movie_timeline/core/themes/bloc/theme_bloc.dart';
 import 'package:movie_timeline/features/timeline/presentation/blocs/movie_bloc.dart';
 import 'package:movie_timeline/features/timeline/presentation/screens/timeline_screen.dart';
-import 'package:movie_timeline/injection_container.dart' as ic;
+import 'package:movie_timeline/service_locator.dart' as sl;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await ic.setup();
+  sl.setup();
   runApp(const MyApp());
 }
 
@@ -22,8 +22,10 @@ class MyApp extends StatelessWidget {
 
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (_) => ic.getIt<ThemeBloc>()),
-        BlocProvider(create: (_) => ic.getIt<MovieBloc>()),
+        BlocProvider(create: (_) => sl.getIt<ThemeBloc>()),
+        BlocProvider(
+          create: (_) => sl.getIt<MovieBloc>()..add(const ListMoviesEvent()),
+        ),
       ],
       child: BlocBuilder<ThemeBloc, ThemeState>(
         builder: _buildApp,

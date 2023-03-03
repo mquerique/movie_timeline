@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:movie_timeline/core/constants/dimensions.dart';
 import 'package:movie_timeline/features/timeline/domain/entities/movie.dart';
 import 'package:movie_timeline/features/timeline/presentation/widgets/movie_card.dart';
